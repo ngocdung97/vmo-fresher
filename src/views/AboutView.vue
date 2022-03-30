@@ -1,5 +1,7 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <div class="login-form">
+      <router-view @change-active-tab="changeActiveTab" />
+    </div>
   </div>
 </template>
