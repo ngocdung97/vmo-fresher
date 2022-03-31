@@ -14,7 +14,15 @@ const routes: Array<RouteRecordRaw> = [
     },
     children: [
       {
-        path: "",
+        path: "/",
+        name: "Home ",
+        component: () =>
+          import(
+            /* webpackChunkName: "login" */ "@/views/HomeView.vue"
+          ),
+      },
+      {
+        path: "/log-in",
         name: "Login",
         component: () =>
           import(
@@ -22,11 +30,19 @@ const routes: Array<RouteRecordRaw> = [
           ),
       },
       {
-        path: "register",
+        path: "/register",
         name: "Register",
         component: () =>
           import(
-            /* webpackChunkName: "login" */ "@/components/login/RegisterForm.vue"
+            /* webpackChunkName: "register" */ "@/components/login/RegisterForm.vue"
+          ),
+      },
+      {
+        path: "/forgot-password",
+        name: "ForgotPassword",
+        component: () =>
+          import(
+            /* webpackChunkName: "forgotpassword" */ "@/components/login/ForgotPasswordForm.vue"
           ),
       },
     ],
